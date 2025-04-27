@@ -1,8 +1,8 @@
 #include "WiFi.h"
 #include "ESPAsyncWebServer.h"
 
-const char* ssid = "ssid";
-const char* password = "pass";
+const char* ssid = "iPhone";
+const char* password = "bdhevxbev";
 
 const int ledPin = 2;
 bool ledState = false;
