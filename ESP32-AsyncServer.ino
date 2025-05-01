@@ -16,9 +16,7 @@ const char index_html[] PROGMEM = R"rawliteral(
   <title>ESP32 Async Server</title>
 </head>
 <body>
-  <h1>ESP32 LED Control</h1>
-  <p>LED State: <strong>%STATE%</strong></p>
-  <p><a href="/toggle"><button>Toggle LED</button></a></p>
+  <h1>ESP32</h1>
 </body>
 </html>
 )rawliteral";
@@ -32,8 +30,6 @@ String processor(const String& var) {
 
 void setup() {
   Serial.begin(115200);
-  pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin, ledState);
 
   WiFi.begin(ssid, password);
   Serial.print("Connecting to WiFi");
@@ -49,13 +45,6 @@ void setup() {
     request->send_P(200, "text/html", index_html, processor);
   });
 
-  server.on("/toggle", HTTP_GET, [](AsyncWebServerRequest *request){
-    ledState = !ledState;
-    digitalWrite(ledPin, ledState);
-    request->redirect("/");
-  });
-
-  
   server.begin();
 }
 
