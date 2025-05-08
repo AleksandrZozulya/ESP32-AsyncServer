@@ -21,12 +21,6 @@ const char index_html[] PROGMEM = R"rawliteral(
 </html>
 )rawliteral";
 
-String processor(const String& var) {
-  if (var == "STATE") {
-    return ledState ? "ON" : "OFF";
-  }
-  return String();
-}
 
 void setup() {
   Serial.begin(115200);

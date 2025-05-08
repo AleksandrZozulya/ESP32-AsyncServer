@@ -4,6 +4,9 @@
 <head>
     <title>ESP Led Control</title>
     <style type="text/css">
+        body{
+            background-color: antiquewhite;
+        }
         .block {
             width: 100%;
             height: 150px;
@@ -12,8 +15,8 @@
             justify-content: space-around;
         }
 
-        .btn {
-            background-color: #04AA6D;
+        .btn-r {
+            background-color: #df1425;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -21,6 +24,59 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+            border-radius: 15px;
+        }
+
+        .btn-r:hover {
+            background-color: rgb(136, 10, 10);
+        }
+
+        .btn-r:active {
+            background-color: rgb(136, 10, 10);
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        .btn-g {
+            background-color: #14df43;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 15px;
+        }
+
+        .btn-g:hover {
+            background-color: rgb(48, 136, 10);
+        }
+
+        .btn-g:active {
+            background-color: rgb(48, 136, 10);
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        .btn-b {
+            background-color: #144adf;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 15px;
+        }
+
+        .btn-b:hover {
+            background-color: rgb(10, 42, 136);
+        }
+
+        .btn-b:active {
+            background-color: rgb(10, 42, 136);
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
         }
     </style>
 </head>
@@ -32,15 +88,15 @@
     <div class="block">
         <div>
             <h3>LED 1 State: <strong>%STATE1%</strong></h3>
-            <p><a href="/toggle?led=0"><button class="btn">LED 1</button></a></p>
+            <p><a href="/toggle?led=0"><button class="btn-r">RED</button></a></p>
         </div>
         <div>
-            <h3>LED 1 State: <strong>%STATE1%</strong></h3>
-            <p><a href="/toggle?led=0"><button class="btn">LED 1</button></a></p>
+            <h3>LED 2 State: <strong>%STATE2%</strong></h3>
+            <p><a href="/toggle?led=1"><button class="btn-g">GREEN</button></a></p>
         </div>
         <div>
-            <h3>LED 1 State: <strong>%STATE1%</strong></h3>
-            <p><a href="/toggle?led=0"><button class="btn">LED 1</button></a></p>
+            <h3>LED 3 State: <strong>%STATE3%</strong></h3>
+            <p><a href="/toggle?led=2"><button class="btn-b">BLUE</button></a></p>
         </div>
     </div>
 </body>
